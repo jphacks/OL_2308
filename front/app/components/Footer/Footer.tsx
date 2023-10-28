@@ -3,11 +3,11 @@
 import { 
   Flex, 
   Text, 
-  Link as ChakraLink, 
+  Link, 
   Spacer,
   HStack
 } from "@chakra-ui/react";
-import Link from "next/link";
+import NextLink from "next/link";
 
 const Footer = () => {
   return (
@@ -32,15 +32,11 @@ const Footer = () => {
       <Text fontSize="md" color="gray.600">2023 JPhacks ol_2308</Text>
 
       <Flex>
-        <Link href="/chat" passHref>
-          <ChakraLink fontSize="sm" marginRight={5} _hover={{ textDecoration: 'underline' }}>
-            このアプリについて
-          </ChakraLink>
+        <Link as={NextLink} href="/chat" fontSize="sm" marginRight={5} _hover={{ textDecoration: 'underline' }}>
+          このアプリについて
         </Link>
-        <Link href="/privacy" passHref>
-          <ChakraLink fontSize="sm" _hover={{ textDecoration: 'underline' }}>
-            プライバシーポリシー
-          </ChakraLink>
+        <Link as={NextLink} href="/privacy" fontSize="sm" _hover={{ textDecoration: 'underline' }}>
+          プライバシーポリシー
         </Link>
       </Flex>
       <Flex>

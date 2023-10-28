@@ -52,7 +52,7 @@ const HomePage: NextPage = () => {
 
 const createImageButton = (imgSrc, altText, href, description) => (
   <LinkBox 
-    as="a" href={href} 
+    as="article" 
     p={4}
     bg="yellow.200"  
     borderRadius='lg'

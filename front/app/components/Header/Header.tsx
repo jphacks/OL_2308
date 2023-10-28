@@ -2,7 +2,7 @@
 
 import { 
   Text, 
-  Link as ChakraLink, 
+  Link, 
   Flex, 
   Image, 
   HStack, 
@@ -13,7 +13,7 @@ import {
   Box,
   Button  
 } from "@chakra-ui/react";
-import Link from "next/link";
+import NextLink from "next/link";
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
 const Header = () => {
@@ -27,32 +27,59 @@ const Header = () => {
       width="100%" 
       boxShadow="md"
     >
-      <Link href="/" passHref>
-        <ChakraLink>
-          <Image src="/images/icon.jpg" alt="アプリケーション名" boxSize="70px" borderRadius="full" boxShadow="xl"/>
-        </ChakraLink>
+      <Link as={NextLink} 
+      href="/">
+        <Image src="/images/icon.jpg" alt="アプリケーション名" boxSize="70px" borderRadius="full" boxShadow="xl"/>
       </Link>
 
       <HStack spacing={7}>
-        <Link href="/" passHref>
-          <ChakraLink fontSize="lg" fontWeight="semibold" _hover={{ textDecoration: 'underline' }}>
-            Home
-          </ChakraLink>
+        <Link
+          as={NextLink}
+          padding={2}
+          href="/"
+          fontSize="lg"
+          fontWeight="semibold"
+          rounded="md"
+          transition="all 0.2s"
+          _hover={{ bg: "#FFFDE7", textDecoration: 'underline' }}
+        >
+          Home
         </Link>
-        <Link href="/try-on" passHref>
-          <ChakraLink fontSize="lg" fontWeight="semibold" _hover={{ textDecoration: 'underline' }}>
-            Try-on
-          </ChakraLink>
+        <Link
+          as={NextLink}
+          padding={2}
+          href="/try-on"
+          fontSize="lg"
+          fontWeight="semibold"
+          rounded="md"
+          transition="all 0.2s"
+          _hover={{ bg: "#FFFDE7", textDecoration: 'underline' }}
+        >
+          Try-on
         </Link>
-        <Link href="/coordination" passHref>
-          <ChakraLink fontSize="lg" fontWeight="semibold" _hover={{ textDecoration: 'underline' }}>
-            Search
-          </ChakraLink>
+        <Link
+          as={NextLink}
+          padding={2}
+          href="/coordination"
+          fontSize="lg"
+          fontWeight="semibold"
+          rounded="md"
+          transition="all 0.2s"
+          _hover={{ bg: "#FFFDE7", textDecoration: 'underline' }}
+        >
+          Search
         </Link>
-        <Link href="/item" passHref>
-          <ChakraLink fontSize="lg" fontWeight="semibold" _hover={{ textDecoration: 'underline' }}>
-            My-Closet
-          </ChakraLink>
+        <Link
+          as={NextLink}
+          padding={2}
+          href="/item"
+          fontSize="lg"
+          fontWeight="semibold"
+          rounded="md"
+          transition="all 0.2s"
+          _hover={{ bg: "#FFFDE7", textDecoration: 'underline' }}
+        >
+          My-Closet
         </Link>
         <Menu>
           <MenuButton 
@@ -73,20 +100,25 @@ const Header = () => {
           borderColor="#DDD" 
           boxShadow="xl"
           >
-            <Link href="/zozo" passHref>
-              <MenuItem as={ChakraLink} bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>ZOZOTOWN</MenuItem>
+            <Link as={NextLink} 
+            href="/zozo">
+              <MenuItem bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>ZOZOTOWN</MenuItem>
             </Link>
-            <Link href="/fifth" passHref>
-              <MenuItem as={ChakraLink} bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>fifth</MenuItem>
+            <Link as={NextLink} 
+            href="/fifth">
+              <MenuItem bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>fifth</MenuItem>
             </Link>
-            <Link href="/otonastyle" passHref>
-              <MenuItem as={ChakraLink} bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>Otonastyle</MenuItem>
+            <Link as={NextLink} 
+            href="/otonastyle">
+              <MenuItem bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>Otonastyle</MenuItem>
             </Link>
-            <Link href="/buyma" passHref>
-              <MenuItem as={ChakraLink} bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>BUYMA</MenuItem>
+            <Link as={NextLink} 
+            href="/buyma">
+              <MenuItem bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>BUYMA</MenuItem>
             </Link>
-            <Link href="/pierrot" passHref>
-              <MenuItem as={ChakraLink} bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>Pierrot</MenuItem>
+            <Link as={NextLink} 
+            href="/pierrot">
+              <MenuItem bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>Pierrot</MenuItem>
             </Link>
           </MenuList>
         </Menu>

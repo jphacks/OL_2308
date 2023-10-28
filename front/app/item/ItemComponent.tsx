@@ -17,8 +17,7 @@ export default function Home() {
   const createImageButton = (imgSrc, altText, href, description) => (
     <LinkBox
       p={4} 
-      as="a" 
-      href={href} 
+      as="article"  
       bg="yellow.200"
       borderRadius='lg'
       transition="transform 0.3s ease-in-out"
