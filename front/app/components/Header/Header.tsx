@@ -89,7 +89,7 @@ const Header = () => {
             fontWeight="semibold" 
             rounded="md" 
             transition="all 0.2s"
-            _hover={{ bg: "#FFFDE7" }}
+            _hover={{ bg: "#FFFDE7", textDecoration: 'underline' }}
             bg="#FFFF99"
           >
             Fashion-site
@@ -100,24 +100,19 @@ const Header = () => {
           borderColor="#DDD" 
           boxShadow="xl"
           >
-            <Link as={NextLink} 
-            href="/zozo">
+            <Link as={NextLink} href="/zozo">
               <MenuItem bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>ZOZOTOWN</MenuItem>
             </Link>
-            <Link as={NextLink} 
-            href="/fifth">
+            <Link as={NextLink} href="/fifth">
               <MenuItem bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>fifth</MenuItem>
             </Link>
-            <Link as={NextLink} 
-            href="/otonastyle">
+            <Link as={NextLink} href="/otonastyle">
               <MenuItem bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>Otonastyle</MenuItem>
             </Link>
-            <Link as={NextLink} 
-            href="/buyma">
+            <Link as={NextLink} href="/buyma">
               <MenuItem bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>BUYMA</MenuItem>
             </Link>
-            <Link as={NextLink} 
-            href="/pierrot">
+            <Link as={NextLink} href="/pierrot">
               <MenuItem bg="#FFFDE7" fontSize="md" fontWeight="medium" _hover={{ bg: "#EDEDED", borderRadius: "md" }}>Pierrot</MenuItem>
             </Link>
           </MenuList>
