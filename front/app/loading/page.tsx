@@ -9,7 +9,7 @@ import {
 
 const Loading = () => {
   return (
-    <Box p={6}>
+    <Box p={6}minH="75vh">
       
 
       <VStack spacing={4}>
