@@ -14,7 +14,7 @@ const Loading = () => {
 
       <VStack spacing={4}>
         <Text fontSize="3xl" fontWeight="bold" color="black.500" mt={2}>
-          試着中...
+          読み込み中...
         </Text>
         <Image
           src="/images/fitting.jpg"
