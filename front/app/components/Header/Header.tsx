@@ -81,6 +81,18 @@ const Header = () => {
         >
           My-Closet
         </Link>
+        <Link
+          as={NextLink}
+          padding={2}
+          href="/chat"
+          fontSize="lg"
+          fontWeight="semibold"
+          rounded="md"
+          transition="all 0.2s"
+          _hover={{ bg: "#FFFDE7", textDecoration: 'underline' }}
+        >
+          Assistant
+        </Link>
         <Menu>
           <MenuButton 
             as={Button}

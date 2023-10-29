@@ -51,10 +51,10 @@ const Page: NextPage = () => {
           <Image src="/Images/chat.png"/>
         </Box>
         <Text>
-          このページでは、<strong>どれすたいる</strong>に関する質問を入力することができます．
-          質問を送信すると、AIが答えを提供してくれます．
+          このページでは<strong>どれすたいる</strong>に質問することができます．
+          質問を送信すると、AIが応答してくれます．
           質問と回答の履歴はある程度保持されるため、連続して質問できます．
-          新しい質問と回答は履歴に追加されます．
+          ファッションに関する相談に乗ってくれたり，アプリに関する情報を教えてくれます．
         </Text>
       </VStack>
       <Box mt={4} p={4} bg="white" borderRadius="md" boxShadow="sm">
