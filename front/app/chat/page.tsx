@@ -77,9 +77,9 @@ const Page: NextPage = () => {
           </VStack>
         ))}
       </Box>
-      <VStack spacing={4} p={4} mt={4}>
+      <VStack spacing={4} p={4} mt={4} >
         <form onSubmit={handleSubmit}>
-          <VStack spacing={4} p={4} bg="white" borderRadius="md" boxShadow="sm">
+          <VStack spacing={4} p={4} bg="gray.50" borderRadius="md" boxShadow="sm" >
             <Heading as="label" size="sm" htmlFor="Prompt">
               質問文
             </Heading>

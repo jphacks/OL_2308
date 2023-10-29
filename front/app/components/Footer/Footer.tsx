@@ -35,8 +35,8 @@ const Footer = () => {
         <Link as={NextLink} href="/chat" fontSize="sm" marginRight={5} _hover={{ textDecoration: 'underline' }}>
           このアプリについて
         </Link>
-        <Link as={NextLink} href="/privacy" fontSize="sm" _hover={{ textDecoration: 'underline' }}>
-          プライバシーポリシー
+        <Link as={NextLink} href="https://github.com/jphacks/OL_2308" fontSize="sm" _hover={{ textDecoration: 'underline' }}>
+          チームリポジトリ
         </Link>
       </Flex>
       <Flex>

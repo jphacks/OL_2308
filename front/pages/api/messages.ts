@@ -1,5 +1,5 @@
-import { initialPrompt } from './../../app/components/InitialPrompt';
 import OpenAI from 'openai';
+import { initialPrompt } from './../../app/components/InitialPrompt';
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
