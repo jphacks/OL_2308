@@ -17,8 +17,8 @@ from PIL import Image
 from werkzeug.utils import secure_filename
 
 q1 = queue.Queue()
-thread1 = threading.Thread(target=prepare, args=(q1, ))
-thread1.start()   
+#thread1 = threading.Thread(target=prepare, args=(q1, ))
+#thread1.start()   
 
 data_list = []
 
@@ -272,11 +272,16 @@ def change_extract_image():
 def do_extract_image():
     data = request.get_json()
     extract_part = data["extractpart"]
-    img_path = "./static/extract_select_image.jpg"
-    outputpath = "./static"
-    outputname = "extracted_done_img.jpg"
+    img_path = "../static/extract_select_image.jpg"
+    outputpath = "../static"
+    outputname = "extracted_done_img"
 
-    os.system("python .\Graphonomy-master\exp\inference\get_cloth_from_human.py --img_path " + img_path +" --category " + extract_part + " --output_path " + outputpath + ' --output_name ' + outputname)
+    print(os.getcwd())
+    os.chdir("./Graphonomy-master")
+
+    os.system("python ./exp/inference/get_cloth_from_human.py --img_path " + img_path +" --category " + extract_part + " --output_path " + outputpath + ' --output_name ' + outputname)
+    os.chdir("../")
+
     #os.system("python clip_cloth.py")
 
     return jsonify({"message": "Image extract successfully"})

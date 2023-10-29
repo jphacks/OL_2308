@@ -8,9 +8,8 @@ import {
   Text
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Home() {
 
@@ -63,7 +62,7 @@ export default function Home() {
 
 
   return (
-    <Box p={4}>
+    <Box p={4} minH="75vh">
       <Box>
       {imageGet && imageGet.length > 0 ? (
           <Box mt={4} p={6}>

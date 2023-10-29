@@ -1,21 +1,12 @@
 import {
-    Box,
-    Button,
-    Center,
-    FormControl,
-    FormLabel,
-    HStack,
-    Image,
-    Radio,
-    RadioGroup,
-    Stack,
-    Text,
-    VStack,
-  } from "@chakra-ui/react";
-  import { useRouter } from "next/navigation";
-  import { useEffect, useState } from "react";
-  import axios from "axios";
-import { request } from "http";
+  Box,
+  Button,
+  Center,
+  Image
+} from "@chakra-ui/react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import Loading from "../loading/page";
   
   export default function Tryon() {
@@ -53,7 +44,7 @@ import Loading from "../loading/page";
         minHeight="100vh">
             <Center>
             <Box 
-            boxSize="200px">
+            boxSize="450px">
                 <Center>
                     <Image
                     src= "http://localhost:5000/static/extracted_done_img.jpg"
