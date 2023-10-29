@@ -1,6 +1,6 @@
 "use client"
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Home() {
 
@@ -12,7 +12,7 @@ export default function Home() {
 
   const closetCloth = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/your_favorite_viewer");
+      const response = await axios.post("http://localhost:5000/tryon_favorite_viewer");
       const closetImages = response.data.imageList;
       setImageGet(closetImages);
     } catch (error) {
@@ -29,7 +29,7 @@ export default function Home() {
           {imageGet.map((imageFileName, index) => (
             <li key={index}>
               <img style={{ margin: 30 }}
-                src={`http://localhost:5000/static/search_favorite_image/${imageFileName}?timestamp=${new Date().getTime()}}`}
+                src={`http://localhost:5000/static/tryon_favorite/${imageFileName}`}
                 alt={`${index}`}
                 width={250}
               />

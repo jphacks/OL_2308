@@ -6,61 +6,60 @@ import {
   FormControl,
   FormLabel,
   HStack,
-  Image,
   Img,
   Radio,
   RadioGroup,
   Stack,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Tryon() {
-  const [imageFiles, setImageFiles] = useState([null, null]);
   const [bodyPart, setBodyPart] = useState("");
   const router = useRouter();
-  const ClothImage = "";
-  const HumanImage = "";
+  const [ClothImage, setClothImage] = useState("http://localhost:5000/static/cloth_icon.png"); // ClothImageをステートとして管理
+  const [HumanImage, setHumanImage] = useState("http://localhost:5000/static/human_icon.png"); // HumanImageをステートとして管理
 
   useEffect(() => {
     handleClothIcon(); // ページが最初に読み込まれたときに画像を取得して imageFiles ステートに保存
     handleHumanIcon();
   }, []);
 
-  const handleClothIcon = () => {
+  const handleClothIcon = async() => {
     const imageUrl = "http://localhost:5000/static/cloth_web.jpg"; // ファイルのURL
 
     // 画像ファイルが存在するかどうかを確認
-    fetch(imageUrl)
-      .then((response) => {
-        if (response.ok) {
-          // ファイルが存在する場合
-          const ClothImage = imageUrl;
-          console.log("Image exists: ", ClothImage);
-        }
-      })
-      .catch((error) => {
-        console.error("Error checking image existence: ", error);
-      });
+    try {
+      // 画像ファイルが存在するかどうかを確認
+      const response = await fetch(imageUrl);
+
+      if (response.ok) {
+        // ファイルが存在する場合
+        setClothImage(imageUrl); // ステートを更新
+        console.log("Image exists: ", imageUrl);
+      }
+    } catch (error) {
+      console.error("Error checking image existence: ", error);
+    }
   };
 
-  const handleHumanIcon = () => {
+  const handleHumanIcon = async() => {
     const imageUrl = "http://localhost:5000/static/origin_web.jpg"; // ファイルのURL
 
-    // 画像ファイルが存在するかどうかを確認
-    fetch(imageUrl)
-      .then((response) => {
-        if (response.ok) {
-          // ファイルが存在する場合
-          const HumanImage = imageUrl;
-          console.log("Image exists: ", HumanImage);
-        }
-      })
-      .catch((error) => {
-        console.error("Error checking image existence: ", error);
-      });
+    try {
+      // 画像ファイルが存在するかどうかを確認
+      const response = await fetch(imageUrl);
+
+      if (response.ok) {
+        // ファイルが存在する場合
+        setHumanImage(imageUrl); // ステートを更新
+        console.log("Image exists: ", imageUrl);
+      }
+    } catch (error) {
+      console.error("Error checking image existence: ", error);
+    }
   };
 
   const handleBodyPartChange = (value) => {
@@ -70,7 +69,7 @@ export default function Tryon() {
   const handleUpload = async () => {
     const formData = new FormData();
     formData.append("bodyPart", bodyPart); // ボディパートをフォームデータに追加
-    router.push("");
+    router.push("./loading");
 
     try {
       const response = await fetch("/api/upload", {
@@ -79,7 +78,7 @@ export default function Tryon() {
       });
 
       if (response.ok) {
-        router.push("");
+        router.push("./try-on-result");
         console.log("success");
       } else {
         console.error("Error uploading images");
@@ -88,7 +87,7 @@ export default function Tryon() {
       console.error("Error uploading images", error);
     }
   };
-
+  
   return (
     <Flex direction="column" align="center" minH="100vh" p={4}>
       <Center>
@@ -106,21 +105,22 @@ export default function Tryon() {
         backgroundPosition="center" // 画像を中央に配置
         minHeight="100vh" // ページ全体の高さに設定
       >
+
         <VStack>
-          <HStack spacing={20} mt={4} mb={4} mr={10} ml={10}>
+          <HStack spacing={20} mt={200} mb={4} mr={20} ml={20}>
             <Box
               flex={1}
               bg="yellow.200"
               borderRadius="md"
               p={4}
-              boxSize="400px"
+              boxSize="360px"
               width="30%"
               transition="transform 0.3s ease-in-out"
               _hover={{ transform: "scale(1.05)" }}
             >
               <VStack spacing={2}>
                 <label>
-                  <a href="">
+                  <a href="./choose_cloth_image">
                     <Img
                       src={ClothImage}
                       boxSize="300px"
@@ -137,13 +137,13 @@ export default function Tryon() {
               bg="yellow.200"
               borderRadius="md"
               p={4}
-              boxSize="400px"
+              boxSize="360px"
               transition="transform 0.3s ease-in-out"
               _hover={{ transform: "scale(1.05)" }}
             >
               <VStack spacing={2}>
                 <label>
-                  <a href="">
+                  <a href="./choose_human_image">
                     <Img
                       src={HumanImage}
                       boxSize="300px"

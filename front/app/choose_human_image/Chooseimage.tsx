@@ -1,16 +1,7 @@
 import {
   Box,
   Button,
-  Center,
-  FormControl,
-  FormLabel,
-  HStack,
-  Image,
-  Radio,
-  RadioGroup,
-  Stack,
-  Text,
-  VStack,
+  Center
 } from "@chakra-ui/react";
 
 export default function Chooseimage() {
@@ -22,7 +13,7 @@ export default function Chooseimage() {
         </Button>
       </Center>
       <Center mt={4}>
-        <Button as="a" colorScheme="yellow" href="/choose-closet-image">
+        <Button as="a" colorScheme="yellow" href="/save_person_tryon">
           クローゼットから選ぶ
         </Button>
       </Center>

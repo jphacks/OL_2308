@@ -1,5 +1,8 @@
 "use client";
-
+import {
+  Button,
+  Center
+} from "@chakra-ui/react";
 import { useRef, useState } from 'react';
 
 export default function Home() {
@@ -50,12 +53,23 @@ export default function Home() {
 
   return (
     <div>
-      <video ref={videoRef} autoPlay />
+      <Center mt={4}>
+        <video ref={videoRef} autoPlay />
+        </Center>
       <canvas ref={canvasRef} width={640} height={480} style={{ display: 'none' }} />
-      <button onClick={startCamera}>ウェブカメラを起動 </button>
-      <button onClick={captureImage}>画像をキャプチャ </button>
-      <button onClick={sendImageToServer}>画像をサーバーに送信</button>
-      {capturedImage && <img src={capturedImage} alt="Captured Image" />}
+      <Center mt={4}>
+        <Button colorScheme="blue" onClick={startCamera}>カメラを起動 </Button>
+        <Button colorScheme="red" onClick={captureImage}>撮影 </Button>
+        <Button colorScheme="blue" onClick={sendImageToServer}>この画像に決定！</Button>
+      </Center>
+      <Center mt={4}>
+        {capturedImage && <img src={capturedImage} alt="Captured Image" />}
+      </Center>
+      <Center mt={4}>
+            <Button as="a" colorScheme="blue"  onClick={sendImageToServer} href="/try-on">
+              試着に戻る
+            </Button>
+      </Center>
     </div>
   );
 }

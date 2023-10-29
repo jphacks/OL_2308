@@ -8,7 +8,7 @@ export default function Chooseimage() {
   return (
     <Box p={3}>
       <Center mt={4}>
-        <Button as="a" colorScheme="blue" href="/">
+        <Button as="a" colorScheme="blue" href="/get-camera-img">
           画像を撮る
         </Button>
       </Center>

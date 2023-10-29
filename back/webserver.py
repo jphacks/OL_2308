@@ -12,10 +12,9 @@ from flask import Flask, jsonify, redirect, render_template, request, url_for
 from flask_cors import CORS, cross_origin
 from flask_ngrok import run_with_ngrok
 from icrawler.builtin import BingImageCrawler
+from main_for_web import prepare, run_vton
 from PIL import Image
 from werkzeug.utils import secure_filename
-
-from main_for_web import prepare, run_vton
 
 q1 = queue.Queue()
 thread1 = threading.Thread(target=prepare, args=(q1, ))
@@ -162,6 +161,15 @@ def your_favorite_viewer():
     responce_data = {"imageList": image_files}
     return jsonify(responce_data)
 
+#try onをして生成された自分の画像名の一覧を渡す
+@app.route('/tryon_favorite_viewer', methods = ['POST'])
+@cross_origin()
+def tryon_favorite_viewer():
+    closet_dir = "./static/tryon_favorite"
+    image_files = os.listdir(closet_dir)
+    responce_data = {"imageList": image_files}
+    return jsonify(responce_data)
+
 
 
 @app.route('/get_image_list', methods=['GET'])
@@ -181,7 +189,7 @@ def try_on_result():
 @cross_origin()
 def save_try_on_result():
     data = request.get_json()
-    favorite_image = data["image"]
+    favorite_image = "output.jpg"
 
     # 現在の日付と時刻からファイル名を生成
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -189,7 +197,7 @@ def save_try_on_result():
     filename, file_extension = os.path.splitext(favorite_image)
     new_filename = f"{timestamp}_{filename}{file_extension}"
 
-    image_path = os.path.join("static", "favorite_image_tryon", new_filename)
+    image_path = os.path.join("static", "tryon_favorite", new_filename)
 
     # 静的ディレクトリ/static/favorite_imageにお気に入りのコーデを保存
     shutil.copy(os.path.join("static", favorite_image), image_path)
@@ -241,7 +249,8 @@ def upload_image():
         image_data = base64.b64decode(image_data) 
         image_data = np.fromstring(image_data, dtype='uint8')
         image = cv2.imdecode(image_data, 1)
-        cv2.imwrite("./static/camera_img.jpg", image)
+        cv2.imwrite("./static/closet/camera_img.jpg", image)
+        cv2.imwrite("./static/cloth_web.jpg", image)
         
         return 'Image uploaded successfully'
 
