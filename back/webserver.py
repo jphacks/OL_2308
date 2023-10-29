@@ -267,6 +267,39 @@ def change_extract_image():
     shutil.copy(source_path, destination_path)
     return jsonify({"message": "Image copied successfully"})
 
+@app.route('/do_extract_image', methods = ['POST'])
+@cross_origin()
+def do_extract_image():
+    data = request.get_json()
+    extract_part = data["extractpart"]
+    img_path = "./static/extract_select_image.jpg"
+    outputpath = "./static"
+    outputname = "extracted_done_img.jpg"
+
+    os.system("python .\Graphonomy-master\exp\inference\get_cloth_from_human.py --img_path " + img_path +" --category " + extract_part + " --output_path " + outputpath + ' --output_name ' + outputname)
+    #os.system("python clip_cloth.py")
+
+    return jsonify({"message": "Image extract successfully"})
+
+@app.route('/save_extracted_image', methods = ['POST'])
+@cross_origin()
+def save_extracted_image():
+    inputpath = "./static/"
+    inputname = "extracted_done_img.jpg"
+    outputpath = "./static/closet/"
+
+    _image = os.path.join(inputpath, inputname)
+
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+
+    filename, file_extension = os.path.splitext(inputname)
+    new_filename = f"{timestamp}_{filename}{file_extension}"
+
+    image_path = os.path.join(outputpath, new_filename)
+
+    shutil.copy(_image, image_path)
+
+    return jsonify({"message": "Image extract successfully"})
  
 if __name__ == '__main__':
     app.run()

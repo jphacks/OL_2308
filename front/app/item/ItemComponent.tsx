@@ -61,9 +61,9 @@ export default function Home() {
       >
         <Center h="100%">
           <HStack spacing={8} >
-            {createImageButton("/images/closet.png", "クローゼットの中を見る", "/closet", "仮想試着機能で商品を試してみましょう。")}  
-            {createImageButton("/images/your_fav_view.png", "お気に入りに登録したコーデ", "/your-favorite-view", "お気に入りに登録したコーディネート。")}
-            {createImageButton("/images/search_fav_view.png", "検索した画像", "/search-favorite-view", "あなたの持っているアイテムを管理します。")}
+            {createImageButton("/images/closet.png", "クローゼットの中を見る", "/closet", "クローゼットの中を見る")}  
+            {createImageButton("/images/your_fav_view.png", "お気に入りに登録したコーデ", "/your-favorite-view", "お気に入りに登録したコーデ")}
+            {createImageButton("/images/search_fav_view.png", "検索した画像", "/search-favorite-view", "検索した画像")}
           </HStack>
         </Center>
       </Flex>

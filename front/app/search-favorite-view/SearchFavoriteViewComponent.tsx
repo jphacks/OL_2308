@@ -9,9 +9,12 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
 
+  const router = useRouter();
   const [imageGet, setImageGet] = useState<string[]>([]);
   const [deleting, setDeleting] = useState<string[]>([]);
 
@@ -27,6 +30,17 @@ export default function Home() {
     } catch (error) {
       console.error("Error fetching favorite images", error);
     }
+  };
+
+  const extract_image = async (filename: string) => {
+    try {
+      await axios.post("http://localhost:5000/change_extract_image", {
+        image: filename,
+      });
+    }catch (error) {
+      console.error("Error changing extract images", error);
+    }
+    router.push('/extract-select');
   };
 
   const deleteImage = async (filename: string) => {
@@ -72,11 +86,21 @@ export default function Home() {
                   <Center>
                     <Button
                       mt={2}
-                      colorScheme="blue"
+                      colorScheme="red"
                         onClick={() => deleteImage(imageFileName)}
                         position="absolute" bottom={4} left="50%" transform="translateX(-50%)"
                     >
                       登録解除
+                    </Button>
+                    <Button 
+                    mt={-5} // 画像の上に表示するために調整
+                    colorScheme="blue" // ボタンのデザインを選択
+                    //onClick={() => }
+                     // 服を抽出する処理を実行
+                    position="absolute" bottom={20} left="50%" transform="translateX(-50%)"
+                    onClick={() => extract_image(imageFileName)}
+                    >
+                      服を抽出する                   
                     </Button>
                   </Center>
                 )}
