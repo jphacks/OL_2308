@@ -37,8 +37,11 @@ GPTにあなたの悩みを相談できます。本アプリの使い方から�
 
 ### 仮想試着技術に使用したモデル概要
 LaDI-VTON
+
 拡散モデルとCLIP（視覚言語モデル）を使用し、服のマスク部分から指定した服装の画像を生成するモデルとなっています。
+
 ![image](https://github.com/jphacks/OL_2308/assets/97216326/a45ccdbb-1467-4554-ae71-caece21076e1)
+
 引用：https://arxiv.org/pdf/2305.13501.pdf
 
 
