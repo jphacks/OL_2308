@@ -45,7 +45,7 @@ https://github.com/jphacks/OL_2308/assets/131255118/9a4d4d43-bf1f-4119-86c3-0d64
 ![image](https://github.com/jphacks/OL_2308/assets/97216326/452f69f1-a9c3-4e0e-a7b4-039a215d0e5b)
 
 
-他人のコーディネートから服装を抽出することも可能です！「自分には似合うかわからない」そんな悩みを解消しましょう！
+他人のコーディネートから服装を抽出することも可能です！抽出した服装を仮想試着し，「自分には似合うかわからない」そんな悩みを解消しましょう！
 ![image](https://github.com/jphacks/OL_2308/assets/131255118/89edde10-634e-4e17-a453-501ff0a0abbe)
 
 
