@@ -18,13 +18,13 @@
 通販で服を購入する際や、服装の管理、服装決めなどファッションの悩み事を解消するWebアプリケーションです！
 
 ### 説明動画
-[![image](https://github.com/jphacks/OL_2308/assets/131255118/b8e7951b-cdc4-4933-ab58-38f3a1c54c0f)](https://youtu.be/ROW1sZBFbMY)
+[![](/sumneil.svg)](https://youtu.be/ROW1sZBFbMY)
 
 
 ### 特長
 #### 1.仮想試着機能
 通販上にある服装を自分の画像に試着させることが可能です。この機能で、自分に合う服装を楽しく効率的に見つけましょう！
-![image](https://github.com/jphacks/OL_2308/assets/131255118/1d67afe6-4a81-4573-8e78-ec9f5bb51777)
+![](https://github.com/jphacks/OL_2308/assets/131255118/1d67afe6-4a81-4573-8e78-ec9f5bb51777)
 
 実際に使用している動画はこちら↓
 
