@@ -92,6 +92,7 @@ LaDI-VTON
 * GPT-3.5-turbo
 
 #### フレームワーク・ライブラリ・モジュール
+* Python
 * Flask
 * Next.js
 
