@@ -1,6 +1,6 @@
 # どれすたいる（Dresstyle）
 
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2023/07/JPHACKS2023_ogp.png)](https://www.youtube.com/watch?v=yYRQEdfGjEg)
+[![IMAGE ALT TEXT HERE](https://github.com/jphacks/OL_2308/assets/97429973/de098745-55b0-447e-b0d5-aae8dc0b7cf2)](https://www.youtube.com/watch?v=yYRQEdfGjEg)
 
 ## 製品概要
 ### 背景(製品開発のきっかけ、課題等）
