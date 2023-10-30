@@ -18,7 +18,7 @@
 通販で服を購入する際や、服装の管理、服装決めなどファッションの悩み事を解消するWebアプリケーションです！
 
 ### 説明動画
-[![image](https://github.com/jphacks/OL_2308/assets/131255118/b8e7951b-cdc4-4933-ab58-38f3a1c54c0f)](https://youtu.be/ROW1sZBFbMY)
+[![image](/figs/sumneil.png)](https://youtu.be/ROW1sZBFbMY)
 
 
 ### 特長
